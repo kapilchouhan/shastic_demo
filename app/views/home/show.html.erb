@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pageviews</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>VISIT ID</th>
+      <th>TITLE</th>
+      <th>POSITION</th>
+      <th>URL</th>
+      <th>TIME SPENT</th>
+      <th>TIMESTAMP</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pageviews.each do |pageview| %>
+      <tr>
+        <td><%= pageview.visit_id %></td>
+        <td><%= pageview.title %></td>
+        <td><%= pageview.position %></td>
+        <td><%= pageview.url %></td>
+        <td><%= pageview.time_spent %></td>
+        <td><%= pageview.timestamp %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

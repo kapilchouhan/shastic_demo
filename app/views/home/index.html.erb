@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Visits</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>EVID</th>
+      <th>VENDOR_SITE_ID</th>
+      <th>VENDOR_VISIT_ID</th>
+      <th>VISIT_ID</th>
+      <th>VENDOR_VISITOR_ID</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visits.each do |visit| %>
+      <tr>
+        <td><%= visit.evid %></td>
+        <td><%= visit.vendor_site_id %></td>
+        <td><%= visit.vendor_visit_id %></td>
+        <td><%= visit.visit_ip %></td>
+        <td><%= visit.vendor_visitor_id %></td>
+        <td><%= link_to 'Show', home_path(visit), class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Destroy', home_path(visit), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Collect Statistics', collect_statistics_home_index_path, class: "btn btn-success" %>
